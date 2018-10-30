@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>postcodenl</name>
+	<displayName><![CDATA[Postcode.nl auto-complete]]></displayName>
+	<version><![CDATA[1.0.0]]></version>
+	<description><![CDATA[Completes the address forms via postcode.nl.]]></description>
+	<author><![CDATA[Apium]]></author>
+	<tab><![CDATA[]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

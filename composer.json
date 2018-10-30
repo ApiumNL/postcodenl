@@ -1,0 +1,10 @@
+{
+    "require": {
+        "postcode-nl/api-restclient": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Apium\\PostcodeNL\\": ""
+        }
+    }
+}

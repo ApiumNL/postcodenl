@@ -1,0 +1,68 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f56f298a6b838cfd76b9d2e4303225e4",
+    "packages": [
+        {
+            "name": "postcode-nl/api-restclient",
+            "version": "1.1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/postcode-nl/PostcodeNl_Api_RestClient.git",
+                "reference": "253118eab53092d6e92e4280f8063c7f036b8f81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/postcode-nl/PostcodeNl_Api_RestClient/zipball/253118eab53092d6e92e4280f8063c7f036b8f81",
+                "reference": "253118eab53092d6e92e4280f8063c7f036b8f81",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "library/"
+                },
+                "classmap": [
+                    "library/PostcodeNl/Api/RestClient.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Scholder",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A client to the Postcode.nl Address API for Dutch address verification. You will need to create an account at https://api.postcode.nl.",
+            "homepage": "https://api.postcode.nl",
+            "keywords": [
+                "address",
+                "api",
+                "client",
+                "magento",
+                "netherlands",
+                "postcode",
+                "rest"
+            ],
+            "time": "2016-06-21T11:37:25+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

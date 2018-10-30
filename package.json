@@ -1,0 +1,33 @@
+{
+  "name": "postcodenl",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ApiumNL/postcodenl.git"
+  },
+  "keywords": [
+    "apium",
+    "postcode.nl",
+    "PrestaShop",
+    "PS",
+    "1.7"
+  ],
+  "author": "Niels Wouda, Apium",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ApiumNL/apiumopc/issues"
+  },
+  "homepage": "https://github.com/ApiumNL/apiumopc#readme",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
