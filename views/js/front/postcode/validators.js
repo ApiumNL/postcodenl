@@ -14,6 +14,10 @@ export default function validate($postcode, $houseNumber)
 function isString(candidate)
 {
     "use strict";
+    if (!candidate) {
+        return false; // should *not* be empty
+    }
+
     // see https://stackoverflow.com/a/9436948/4316405
     return typeof candidate === 'string' || candidate instanceof String;
 }

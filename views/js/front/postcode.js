@@ -13,7 +13,6 @@ $(document).on("change", "select[name='id_country']", function () {
     /* global country_postcode_active */
     if (parseInt($(this).val()) === country_postcode_active) {
         hideFields(); // hide superfluous fields (address lines, city)
-        displayPostcode();
     } else {
         showFields(); // different country
     }

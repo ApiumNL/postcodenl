@@ -17,7 +17,7 @@ function showFields()
         $("#" + item).parent().show();
     });
 
-    $("#houseNumber").hide(); // this belongs to the postcode processing
+    $("div.postcodenl").hide(); // this belongs to the postcode processing
 }
 
 export default showFields;

@@ -1,6 +1,8 @@
 # PostcodeNL
 
-Currently only works for `NL`, **not** `BE`!
+Currently only works for `NL`, **not** `BE`! For `NL`, this totally suppresses
+standard input mechanisms - _i.e._, you will depend on the availability of the
+webservice.
 
 ## Licensing
 

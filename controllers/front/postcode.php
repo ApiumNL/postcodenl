@@ -7,24 +7,26 @@
  */
 defined('_PS_VERSION_') || exit;
 
+use PostcodeNl_Api_RestClient;
+
 class PostcodeNLPostcodeModuleFrontController extends ModuleFrontController
 {
-    public function __construct()
-    {
-        $this->ajax = true;
-    }
-
     public function displayAjaxPostcode()
     {
-        // TODO
-    }
+        try { // the client is a bit exception-happy, so best to wrap this
+            $client = new PostcodeNl_Api_RestClient(
+                Configuration::get('POSTCODE_NL_API_KEY'),
+                Configuration::get('POSTCODE_NL_API_SECRET')
+            );
 
-    public function displayAjaxPostcodeForm()
-    {
-        die(json_encode([
-            'html' => $this->context->smarty->fetch(
-                $this->module->local_path.'views/templates/front/postcode.tpl'
-            )
-        ]));
+            $lookup = $client->lookupAddress(
+                Tools::getValue('postcode'),
+                Tools::getValue('houseNumber')
+            );
+
+            die(json_encode($lookup));
+        } catch (PostcodeNl_Api_RestClient_Exception $e) {
+            die(json_encode(false));
+        }
     }
 }

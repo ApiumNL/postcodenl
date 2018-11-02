@@ -5,3 +5,5 @@
  * @copyright 2018, Apium
  */
 import "./postcode";
+
+import "../../css/front/template.css";

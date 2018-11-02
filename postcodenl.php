@@ -9,7 +9,7 @@ defined('_PS_VERSION_') || exit;
 
 require_once 'vendor/autoload.php';
 
-class PostcodeNL extends Module
+class PostCodeNL extends Module
 {
     public function __construct()
     {
@@ -33,13 +33,17 @@ class PostcodeNL extends Module
     public function install()
     {
         return parent::install()
-            && $this->registerHook('displayHeader');
+            && $this->registerHook('displayHeader')
+            && $this->registerHook('displayPostCodeNL')
+            && $this->registerHook('displayOverrideTemplate');
     }
 
     public function uninstall()
     {
         return parent::uninstall()
-            && $this->unregisterHook('displayHeader');
+            && $this->unregisterHook('displayHeader')
+            && $this->unregisterHook('displayPostCodeNL')
+            && $this->unregisterHook('displayOverrideTemplate');
     }
 
     public function getContent()
@@ -55,11 +59,34 @@ class PostcodeNL extends Module
             return;
         }
 
+        // Webpack is in control of CSS assets
+        $this->context->controller->addCSS($this->getPathUri().'views/css/front.styles.css');
         $this->context->controller->addJS($this->getPathUri().'views/js/front.bundle.js');
 
         Media::addJsDef([
             'country_postcode_active' => Country::getByIso('NL')
         ]);
+    }
+
+    /**
+     * Used to override the address template. Change this template (in
+     * `/views/templates` to suit your particular theme. Default works for
+     * PS 1.6.x.
+     */
+    public function hookDisplayOverrideTemplate($params)
+    {
+        if ($params['controller']->php_self == "address") {
+            return $this->local_path.'views/templates/hook/address.tpl';
+        }
+
+        return false;
+    }
+
+    public function hookDisplayPostCodeNL()
+    {
+        return $this->context->smarty->fetch(
+            $this->local_path.'views/templates/hook/postcodenl.tpl'
+        );
     }
 
     private function shouldAddProcessing()
