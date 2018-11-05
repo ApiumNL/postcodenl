@@ -9,7 +9,7 @@ defined('_PS_VERSION_') || exit;
 
 require_once 'vendor/autoload.php';
 
-class PostCodeNL extends Module
+class PostcodeNL extends Module
 {
     public function __construct()
     {
@@ -34,7 +34,7 @@ class PostCodeNL extends Module
     {
         return parent::install()
             && $this->registerHook('displayHeader')
-            && $this->registerHook('displayPostCodeNL')
+            && $this->registerHook('displayPostcodeNL')
             && $this->registerHook('displayOverrideTemplate');
     }
 
@@ -42,7 +42,7 @@ class PostCodeNL extends Module
     {
         return parent::uninstall()
             && $this->unregisterHook('displayHeader')
-            && $this->unregisterHook('displayPostCodeNL')
+            && $this->unregisterHook('displayPostcodeNL')
             && $this->unregisterHook('displayOverrideTemplate');
     }
 
@@ -82,7 +82,7 @@ class PostCodeNL extends Module
         return false;
     }
 
-    public function hookDisplayPostCodeNL()
+    public function hookDisplayPostcodeNL()
     {
         return $this->context->smarty->fetch(
             $this->local_path.'views/templates/hook/postcodenl.tpl'
@@ -91,7 +91,9 @@ class PostCodeNL extends Module
 
     private function shouldAddProcessing()
     {
-        $controllers = ['address']; // TODO extend where necessary
-        return in_array($this->context->controller->php_self, $controllers);
+        return in_array(
+            $this->context->controller->php_self,
+            ['address'] // TODO extend where necessary
+        );
     }
 }

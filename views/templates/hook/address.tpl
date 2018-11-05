@@ -103,7 +103,7 @@
                     <input class="is_required validate form-control" data-validate="{$address_validation.$field_name.validate}" type="text" id="postcode" name="postcode" value="{if isset($smarty.post.postcode)}{$smarty.post.postcode}{else}{if isset($address->postcode)}{$address->postcode|escape:'html':'UTF-8'}{/if}{/if}" />
                 </div>
                 {* Insert this into your template, just below the postcode *}
-                {hook h='displayPostCodeNL'}
+                {hook h='displayPostcodeNL'}
             {/if}
             {if $field_name eq 'city'}
                 <div class="required form-group">

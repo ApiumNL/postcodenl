@@ -8,7 +8,7 @@ export default function validate($postcode, $houseNumber)
 {
     "use strict";
     return isString($houseNumber.val())
-        && isPostCode($postcode.val());
+        && isPostcode($postcode.val());
 }
 
 function isString(candidate)
@@ -22,7 +22,7 @@ function isString(candidate)
     return typeof candidate === 'string' || candidate instanceof String;
 }
 
-function isPostCode(candidate)
+function isPostcode(candidate)
 {
     "use strict";
     /* global countriesNeedZipCode, country_postcode_active */
